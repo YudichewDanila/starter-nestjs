@@ -9,7 +9,7 @@ import { AppService } from './app.service';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    
+    /*
     TypeOrmModule.forRoot({
       entities: [Categorys],
       type: 'mysql',
@@ -21,7 +21,9 @@ import { AppService } from './app.service';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    CategorysModule,
+    */
+
+  //  CategorysModule,
   ],
   controllers: [AppController],
   providers: [AppService],
