@@ -9,21 +9,19 @@ import { AppService } from './app.service';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    /*
+    
     TypeOrmModule.forRoot({
       entities: [Categorys],
       type: 'mysql',
-      host: process.env.host,
-      port: Number(process.env.port),
-      username: process.env.usernameBd,
-      password: process.env.password,
-      database: process.env.database,
+      host: 'db4free.net',
+      port: 3306,
+      username: 'rootuserdaer',
+      password: 'y76hu!SK$9gFYmq',
+      database: 'reactonlinestor',
       autoLoadEntities: true,
       synchronize: true,
     }),
-    */
-
-  //  CategorysModule,
+    CategorysModule,
   ],
   controllers: [AppController],
   providers: [AppService],
