@@ -6,6 +6,7 @@ export class CategorysController {
   constructor(private categorysService: CategorysService) {}
   @Post()
   create(@Body() dto: { NameCategory: string }) {
+    console.log(this.categorysService.createCategory(dto));
     return this.categorysService.createCategory(dto);
   }
   @Get()
