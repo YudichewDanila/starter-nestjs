@@ -9,14 +9,15 @@ import { AppService } from './app.service';
 @Module({
   imports: [
     ConfigModule.forRoot(),
+    
     TypeOrmModule.forRoot({
+      entities: [Categorys],
       type: 'mysql',
       host: process.env.host,
       port: Number(process.env.port),
       username: process.env.usernameBd,
       password: process.env.password,
       database: process.env.database,
-      entities: [Categorys],
       autoLoadEntities: true,
       synchronize: true,
     }),
