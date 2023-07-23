@@ -1,11 +1,26 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Categorys } from './categorys/categorys.enity';
+import { CategorysModule } from './categorys/categorys.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: process.env.host,
+      port: Number(process.env.port),
+      username: process.env.usernameBd,
+      password: process.env.password,
+      database: process.env.database,
+      entities: [Categorys],
+      autoLoadEntities: true,
+      synchronize: true,
+    }),
+    CategorysModule,
   ],
   controllers: [AppController],
   providers: [AppService],
