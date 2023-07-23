@@ -19,7 +19,7 @@ import { AppService } from './app.service';
       password: 'y76hu!SK$9gFYmq',
       database: 'reactonlinestor',
       autoLoadEntities: true,
-      synchronize: true,
+      //synchronize: true,
     }),
     CategorysModule,
   ],
