@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Categorys } from './categorys/categorys.enity';
+import { UnderCategorys } from './undercategorys/undercategorys.enity';
 import { UndercategorysModule } from './undercategorys/undercategorys.module';
 import { CategorysModule } from './categorys/categorys.module';
 import { AppController } from './app.controller';
@@ -12,15 +13,15 @@ import { AppService } from './app.service';
     ConfigModule.forRoot(),
     
     TypeOrmModule.forRoot({
-      entities: [Categorys],
+      entities: [Categorys, UnderCategorys],
       type: 'mysql',
       host: process.env.host,
       port: Number(process.env.portBd),
       username: process.env.usernameBd,
       password: process.env.password,
       database: process.env.database,
-      autoLoadEntities: true,
-      synchronize: true,
+      //autoLoadEntities: true,
+      //synchronize: true,
     }),
     CategorysModule,
     UndercategorysModule,
